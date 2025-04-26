@@ -1,0 +1,15 @@
+server:
+#端口号
+  port: 8123
+  servlet:
+#访问地址前缀
+    context-path: /api
+spring:
+  application:
+    name: yu-picture-backend
+# 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yu_picture
+    username: root
+    password: 123456
