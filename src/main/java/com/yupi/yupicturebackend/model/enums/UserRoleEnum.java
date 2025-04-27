@@ -6,11 +6,11 @@ import lombok.Getter;
 /**
  * @author: Passion！ 无他,唯手熟尔！一定要敲和实践 菜鸟不要用AI
  * @Date 2025/4/27 05:22
- * 如果枚举值特别多，可以Redis的 Map结构缓存所有枚举值来加速查找，而不是遍历列表。
+ * 如果枚举值特别多，可以使用Map结构存储所有枚举值来加速查找，而不是遍历列表 遍历集合。
  */
 @Getter
 public enum UserRoleEnum {
-    //TODO enum枚举用 逗号 隔开
+    //enum枚举对象之间用 逗号 隔开
     USER("用户", "user"),
     ADMIN("管理员", "admin"),
     VIP_USER("会员用户","VIP_User");

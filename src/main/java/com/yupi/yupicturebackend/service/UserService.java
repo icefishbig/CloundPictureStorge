@@ -1,7 +1,11 @@
 package com.yupi.yupicturebackend.service;
 
-import com.yupi.yupicturebackend.domain.User;
+import cn.hutool.http.server.HttpServerRequest;
+import com.yupi.yupicturebackend.model.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.yupi.yupicturebackend.model.vo.LoginUserVO;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
 * @author 31051
@@ -19,5 +23,27 @@ public interface UserService extends IService<User> {
      */
     long userRegister(String userAccount, String userPassword, String checkPassword);
 
+    /**
+     * 加密Password
+     * @param userPassword 密码
+     * @return String
+     */
     String getEncryptPassword(String userPassword);
+
+    /**
+     * 获取当前用户登录
+     * @param userAccount 用户名
+     * @param userPassWord 密码
+     * @param request Request对象 用于保存用户对象到Seesion中
+     * @return
+     */
+    LoginUserVO userLogin(String userAccount, String userPassWord, HttpServletRequest request);
+
+    /**
+     * 获取用户脱敏数据
+     *
+     * @param user user对象
+     * @return 脱敏结果VO对象
+     */
+    LoginUserVO getLoginUserVO(User user);
 }

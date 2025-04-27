@@ -1,4 +1,4 @@
-package com.yupi.yupicturebackend.domain;
+package com.yupi.yupicturebackend.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.util.Date;
 
 
 /**
- * 用户
+ * 用户实体类
  * @TableName user
  */
 @TableName(value ="user")
@@ -46,7 +46,8 @@ public class User implements Serializable {
     private String userProfile;
 
     /**
-     * 用户角色：user/admin
+     * 用户角色：user/admin String方便使用
+     * 这里可以用枚举类实现 MP配置
      */
     private String userRole;
 

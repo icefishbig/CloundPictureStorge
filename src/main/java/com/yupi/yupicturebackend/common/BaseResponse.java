@@ -11,11 +11,11 @@ import java.io.Serializable;
  */
 @Data
 public class BaseResponse<T> implements Serializable {
-
+    //错误码
     private int code;
-
+    //
     private T data;
-
+    //错误信息
     private String message;
 
     public BaseResponse(int code, T data, String message) {
