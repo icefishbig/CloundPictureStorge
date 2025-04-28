@@ -4,7 +4,7 @@ import lombok.Getter;
 
 /**
  * 自定义实现异常
- * 处理业务异常
+ * 处理业务异常 抛出业务异常信息
  */
 @Getter
 public class BusinessException extends RuntimeException {
