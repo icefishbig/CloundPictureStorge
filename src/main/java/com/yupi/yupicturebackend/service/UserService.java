@@ -1,8 +1,7 @@
 package com.yupi.yupicturebackend.service;
 
-import cn.hutool.http.server.HttpServerRequest;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.yupi.yupicturebackend.model.dto.UserQueryRequest;
+import com.yupi.yupicturebackend.model.dto.user.UserQueryRequest;
 import com.yupi.yupicturebackend.model.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.yupi.yupicturebackend.model.vo.LoginUserVO;
@@ -56,7 +55,7 @@ public interface UserService extends IService<User> {
      * @param request
      * @return
      */
-    LoginUserVO getLoginUser(HttpServletRequest request);
+    User getLoginUser(HttpServletRequest request);
     /**
      * 用户注销登录
      * @param request
@@ -69,4 +68,6 @@ public interface UserService extends IService<User> {
     List<UserVO> getUserVOList(List<User> userList);
     //获取条件构造器
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
+    //判断是否为管理员
+    boolean isadmin(User loginUser);
 }

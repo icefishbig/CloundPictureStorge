@@ -1,0 +1,10 @@
+# 对象存储配置（需要从腾讯云获取）
+cos:
+  client:
+#    主机名
+    host: xhhjavaproject-1354821894
+    secretId: AKIDqY3KL7eurb7NN9i26wYy96pJYYJq8ByW
+    secretKey: LQGsFOHvLWS9c7PREqENGuMYVQ7rLbdQ
+#    地域
+    region: ap-guangzhou
+    bucket: xhhjavaproject-1354821894

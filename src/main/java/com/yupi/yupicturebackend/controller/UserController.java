@@ -1,8 +1,6 @@
 package com.yupi.yupicturebackend.controller;
 
-import cn.hutool.http.server.HttpServerRequest;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.yupi.yupicturebackend.annotation.AuthCheck;
 import com.yupi.yupicturebackend.common.BaseResponse;
 import com.yupi.yupicturebackend.common.DeleteRequest;
@@ -11,12 +9,11 @@ import com.yupi.yupicturebackend.constant.UserConstant;
 import com.yupi.yupicturebackend.exception.BusinessException;
 import com.yupi.yupicturebackend.exception.ErrorCode;
 import com.yupi.yupicturebackend.exception.ThrowUtils;
-import com.yupi.yupicturebackend.model.dto.*;
+import com.yupi.yupicturebackend.model.dto.user.*;
 import com.yupi.yupicturebackend.model.entity.User;
 import com.yupi.yupicturebackend.model.vo.LoginUserVO;
 import com.yupi.yupicturebackend.model.vo.UserVO;
 import com.yupi.yupicturebackend.service.UserService;
-import jdk.nashorn.internal.ir.BlockLexicalContext;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -72,8 +69,8 @@ public class UserController {
      */
     @PostMapping("/get/login")
     public BaseResponse<LoginUserVO> getUserLogin(HttpServletRequest request) {
-        LoginUserVO loginUserVO = userService.getLoginUser(request);
-        return ResultUtils.success(loginUserVO);
+        User loginUserVO = userService.getLoginUser(request);
+        return ResultUtils.success(userService.getLoginUserVO(loginUserVO));
     }
 
     /**
