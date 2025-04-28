@@ -3,6 +3,7 @@ package com.yupi.yupicturebackend.service;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yupi.yupicturebackend.model.dto.picture.PictureQueryRequest;
+import com.yupi.yupicturebackend.model.dto.picture.PictureReviewRequest;
 import com.yupi.yupicturebackend.model.dto.picture.PictureUploadRequest;
 import com.yupi.yupicturebackend.model.entity.Picture;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -49,4 +50,19 @@ public interface PictureService extends IService<Picture> {
      * @return 页面<图片vo>
      */
     Page<PictureVO> getPictureVOPage(Page<Picture> picturePage,HttpServletRequest request);
+    /**
+     * 图片审核
+     *
+     * @param pictureReviewRequest
+     * @param loginUser
+     */
+    void doPictureReview(PictureReviewRequest pictureReviewRequest, User loginUser);
+
+    /**
+     * 填写审核参数
+     *
+     * @param picture   相片
+     * @param loginUser 登录用户
+     */
+    public void fillReviewParams(Picture picture, User loginUser);
 }

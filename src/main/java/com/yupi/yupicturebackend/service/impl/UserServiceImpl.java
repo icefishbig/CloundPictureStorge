@@ -164,7 +164,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
         }
         return currentUser;
-        //TODO 接口测试的SeesionID怎么在测试中赋值
     }
 
     /**
